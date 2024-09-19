@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="GoodFileMapper">
+	<resultMap type="VO.GoodFileVO" id="GoodFileMap">
+		<id property="goodFileNo" column="good_file_no"/>
+        <result property="goodNo" column="good_no"/>
+        <result property="goodFilePath" column="good_file_path"/>
+        <result property="goodFileName" column="good_file_name"/>    
+        <result property="goodFileSize" column="good_file_size"/>
+        <result property="goodFileType" column="good_file_type"/>  
+	</resultMap>
+	
+	<insert id="insert" parameterType="VO.GoodFileVO">
+		insert into good_file(good_no, good_file_path, good_file_name, good_file_size, good_file_type) 
+		values(#{goodNo}, #{goodFilePath}, #{goodFileName}, #{goodFileSize}, #{goodFileType});
+	</insert>
+	
+	 <select id="findByGoodNo" parameterType="int" resultType="VO.GoodFileVO">
+        SELECT *
+        FROM good_file
+        WHERE good_no = #{goodNo};
+    </select>
+
+    <update id="update" parameterType="VO.GoodFileVO">
+        UPDATE good_file
+        SET good_file_name = #{goodFileName},
+            good_file_path = #{goodFilePath},
+            good_file_size = #{goodFileSize},
+            good_file_type = #{goodFileType}
+        WHERE good_no = #{goodNo}
+    </update>
+</mapper>

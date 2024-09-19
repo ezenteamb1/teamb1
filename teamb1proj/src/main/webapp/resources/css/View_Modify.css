@@ -1,0 +1,467 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'NanumSquareNeo';
+	src:
+		url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+	src:
+		url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix)
+		format("embedded-opentype"),
+		url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff)
+		format("woff"),
+		url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf)
+		format("truetype");
+}
+
+@font-face {
+	font-family: 'NanumSquareNeoBold';
+	src:
+		url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+	src:
+		url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix)
+		format("embedded-opentype"),
+		url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff)
+		format("woff"),
+		url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf)
+		format("truetype");
+}
+
+/* 맛집 상세보기 background */
+#good_back {
+	width: 1500px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+}
+
+/*--------------------------- 맛집 제목 ---------------------------*/
+
+/* 맛집 상세보기 제목 */
+#ghead {
+	margin: 0 auto;
+	width: 900px;
+	height: 164px;
+	padding: 30px;
+	border: 4px solid #ebebeb;
+	margin-bottom: 30px;
+	background: white;
+	border-radius: 20px 20px 0px 0px;
+}
+
+.contents {
+	display: flex;
+	flex-direction: row;
+	margin-top: 30px;
+	width: 20%
+}
+
+.contents .upload-box {
+	width: 100%;
+	margin-right: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contents .upload-box .drag-file {
+	position: relative;
+	width: 100%;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 3px dashed #dbdbdb;
+	margin-top: -28%;
+}
+
+.contents .upload-box .drag-file.highlight {
+	border: 3px dashed red;
+}
+
+.contents .upload-box .drag-file .image {
+	width: 40px;
+}
+
+.contents .upload-box .drag-file .message {
+	margin-bottom: 0;
+}
+
+.contents .upload-box .drag-file .preview {
+
+	position: absolute;
+	left: 0;
+	height: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.contents .upload-box .file-label {
+	margin-top: 10px;
+	background-color: #555555;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	width: 65%;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.contents .upload-box .file {
+	display: none;
+}
+
+@media ( max-width : 700px) {
+	.contents {
+		display: flex;
+		flex-direction: column;
+		margin-top: 30px;
+	}
+	.contents .upload-box {
+		width: 100%;
+		box-sizing: border-box;
+		margin-right: 0;
+	}
+	.contents .upload-box .drag-file {
+		height: 150px;
+	}
+	.contents .files {
+		width: 100%;
+		box-sizing: border-box;
+		margin-right: 0;
+		overflow: initial;
+	}
+}
+
+/* 맛집 이름 */
+.good_title {
+	font-family: 'NanumSquareNeoBold';
+	text-align: left;
+	font-size: 30px;
+}
+
+.good_title input[type="text"] {
+	font-family: 'NanumSquareNeoBold';
+	border: none;
+	border-bottom: 2px solid #ebebeb;
+	font-size: 25px;
+	width: 100%;
+	height: 35px;
+	background: transparent;
+}
+/* 맛집 별점 */
+.star-rating span{
+	color:orange;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    justify-content: space-around;
+    padding: 0 0.2em;
+    text-align: center;
+    width: 5em;
+    justify-content: flex-end;
+  }
+   
+  .star-rating input {
+    display: none;
+  }
+   
+  .star-rating label {
+    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: #2b2a29;
+    cursor: pointer;
+  }
+   
+  .star-rating input:checked ~ label {
+    -webkit-text-fill-color: gold;
+  }
+   
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    -webkit-text-fill-color: #fff58c;
+  }
+  
+
+/* 맛집 설명 */
+.good_secondTitle {
+	font-family: 'NanumSquareNeo';
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.good_secondTitle input {
+	font-size: 17px;
+	width: 100%;
+	height: 20px;
+	border: none;
+	background: transparent;
+	border-bottom: 1px solid #b5b5b5;
+}
+
+.good_secondTitle {
+	width: 100%;
+	height: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* 지역태그 */
+#ghead a {
+	color: black;
+	font-family: 'NanumSquareNeoBold';
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+	background-color: #555555;
+	color: white;
+	padding: 7px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 185px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+	background-color: #555555;
+}
+
+.select_locat{
+	appearance: none;
+	background-color: #555555;
+	color: white;
+	padding: 7px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.select_locat::-ms-expand { 
+	display: none;
+}
+.option_locat{
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	background-color: #f9f9f9;
+}
+
+/*--------------------------- 맛집 본문 ---------------------------*/
+
+/* 맛집 상세보기 본문 */
+#gbody {
+	margin: 0 auto;
+	width: 921px;
+}
+
+/* 매장소개,매장소개글 div */
+#good_ExDiv {
+	width: 880px;
+	border: 2px solid #ebebeb;
+	border-radius: 13px;
+	padding: 20px;
+	margin-bottom: 12px;
+}
+
+/* "매장소개" */
+#good_ExTitle {
+	font-family: 'NanumSquareNeoBold';
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+/* 매장소개글 */
+.good_Ex {
+	font-family: 'NanumSquareNeo';
+	font-size: 16px;
+	line-height: 1.6;
+	width: 100%;
+}
+
+.content {
+	width: 100%;
+	height: 150px;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	background-color: #f8f8f8;
+	resize: none;
+}
+
+/* 영업시간, 주차, 메뉴... div */
+#good_data {
+	width: 480px;
+	border: 2px solid #ebebeb;
+	border-radius: 13px;
+	padding: 20px;
+	display: inline-flex;
+}
+
+/* 영업시간, 주차, 메뉴... table th */
+.good_dataTable th {
+	text-align: left;
+	font-family: 'NanumSquareNeoBold';
+	padding-right: 30px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	font-size: 17px;
+}
+
+/* 영업시간, 주차, 메뉴... table td */
+.good_dataTable td {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-family: 'NanumSquareNeo';
+	font-size: 16px;
+}
+
+.menu, .price, .phone {
+	border: none;
+	border-bottom: 2px solid #b5b5b5;
+	background: rgba(255, 255, 255, 0.1);
+}
+.operation_time{
+		border: none;
+	border-bottom: 2px solid #b5b5b5;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* 주소*/
+#sample5_address{
+	border: none;
+	border-bottom: 2px solid #b5b5b5;
+	background: rgba(255, 255, 255, 0.1);
+	width: 190px;
+}
+#search_btn{
+	background-color: white; 
+	border: 3px solid #e7e7e7;
+	color: black;
+	padding: -1px;
+	font-size: 16px;
+	margin: 3px;
+	transition-duration: 0.4s;
+	border-radius: 5px;
+	font-family: 'NanumSquareNeoBold';
+}
+
+#search_btn:hover{
+
+	background-color: #e7e7e7; 
+	color: black;
+}
+/* 지도 */
+.map_div {
+	display: inline-flex;
+	border: 2px solid #ebebeb;
+	border-radius: 13px;
+	margin-left: 10px;
+	width: 388px;
+	height: 344px;
+	position: absolute;
+}
+
+.map {
+	width: 340px;
+	height: 340px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 26px;
+}
+
+#good_map_ExTitle {
+	font-family: 'NanumSquareNeoBold';
+	font-size: 17px;
+	margin-bottom: 20px;
+}
+
+#div-title {
+	text-align: left;
+	font-family: 'NanumSquareNeoBold';
+	padding-right: 15px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	font-size: 17px;
+}
+
+#map {
+	width: 250px;
+	height: 250px;
+	margin-top: 10px;
+	display: none;
+}
+
+/*취소, 작성 버튼*/
+
+.btn_div{
+	display: flex;
+	justify-content: center; 
+}
+
+.btn_submit {
+	background-color: white; 
+	border: 3px solid #e7e7e7;
+	color: black;
+	padding: 22px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: flex; 
+	align-items: center;
+	font-size: 16px;
+	margin: 10px;
+	transition-duration: 0.4s;
+	border-radius: 5px;
+	font-family: 'NanumSquareNeoBold';
+}
+
+.btn_submit:hover {
+	background-color: #e7e7e7; 
+	color: black;}

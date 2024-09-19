@@ -1,0 +1,300 @@
+@charset "UTF-8";
+
+
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf) format("truetype");
+}
+
+
+/* 레시피 페이지 */
+#recipe_div{
+	text-align: center;
+    border-bottom: 3px solid #ebebeb;
+    width: 1200px;
+    min-height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px
+}
+
+/* 레시피 이미지 */
+
+.contents {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  width: 333px;
+  margin-left: 120px;
+  margin-top: 59px;
+  float: left;
+}
+
+.contents .upload-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contents .upload-box .drag-file {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px dashed #dbdbdb;
+}
+
+.contents .upload-box .drag-file.highlight {
+  border: 3px dashed red;
+}
+
+.contents .upload-box .drag-file .image {
+  width: 40px;
+}
+
+.contents .upload-box .drag-file .message {
+  margin-bottom: 0;
+}
+
+.contents .upload-box .drag-file .preview {
+  position: absolute;
+  left: 0;
+  height: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.contents .upload-box .file-label {
+  margin-top: 30px;
+  background-color: #5b975b;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  width: 65%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contents .upload-box .file {
+  display: none;
+}
+
+@media (max-width: 333px) {
+  .contents {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .contents .upload-box {
+    width: 100%;
+    box-sizing: border-box;
+    margin-right: 0;
+  }
+  .contents .upload-box .drag-file {
+    height: 150px;
+  }
+  .contents .files {
+    width: 100%;
+    box-sizing: border-box;
+    margin-right: 0;
+    overflow: initial;
+  }
+}
+
+/* 오른쪽 정렬 */
+#recipe_nameStuff{
+	display: inline-block;
+	float : right;
+	margin-top: 50px;
+	margin-right: 50px;
+	margin-left: 50px;
+	width: 550px;
+}
+
+/* 레시피 제목, 설명 */
+#recipe_title{
+	font-family: 'NanumSquareNeo';
+	text-align: left;
+	word-break: break-all;
+}
+
+/* 레시피 이름 */
+.recipe_name{
+	padding-top: 30px;
+    margin-top: 15px;
+	font-family: 'NanumSquareNeoBold';
+	font-size : 35px;
+	border-top: 3px solid #ebebeb;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.recipe_name input {
+	border : none;
+	width: 100%;
+	font-size: 25px;
+}
+
+.recipe_name input:hover {
+	box-shadow: rgba(0,0,0,0.4);
+}
+
+/* 레시피 재료 */
+#recipe_stuff{
+	margin-top : 35px;
+	text-align: left;
+	font-family: 'NanumSquareNeo';
+}
+
+#recipe_stuff p{
+	margin : 7px;
+}
+
+/* "재료" */
+#stuff{
+	font-family: 'NanumSquareNeoBold';
+	font-size : 25px;
+	margin-bottom: 25px;
+}
+
+/* "필수재료", "선택재료", "양념장" */
+#second_stuff, #parts-title{
+	font-family : 'NanumSquareNeoBold';
+	margin-top: 30px;
+    margin-bottom: 9px;
+	font-size: 17px;
+	text-align: left;
+}
+
+#recipe_stuff input {
+	font-size: 15px;
+	color : #888888;
+	width: 400px;
+	border: 1px solid #eeeeee;
+}
+
+/* 음식 종류 */
+#parts{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#parts .tile{
+    height: 40px;
+    width: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#parts input[type="checkbox"]{
+	-webkit-appearance: none;
+	position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    outline: none;
+    box-shadow: 15px 15px 25px rgba(2,28,53,0.05);
+}
+
+#parts input[type="checkbox"]:after{
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f111";
+    font-size: 15px;
+    top: 10px;
+    left: 10px;
+    color: #e2e6f3;
+}
+
+#parts input[type="checkbox"]:hover{
+    transform: scale(1.08);
+}
+
+#parts input[type="checkbox"]:checked{
+    border: 3px solid #478bfb;
+}
+
+#parts input[type="checkbox"]:checked:after{
+    font-weight: 900;
+    content: "\f058";
+    color: #478bfb;
+}
+
+#parts label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 8px;
+    top: 0px;
+    cursor: pointer;
+}
+
+#parts label {
+    font-size: 30px;
+    color: #2c2c51;
+}
+
+#parts input[type="checkbox"]:checked + label span{
+    animation: grow 0.8s;
+}
+
+@keyframes grow{
+    50%{
+        font-size: 18px;
+    }
+} 
+
+#parts label span{
+    font-family: "Poppins",sans-serif;
+    font-size: 15.5px;
+    font-weight: 500;
+    color: #7b7b93;
+}
+
+
+/* 레시피 내용 */
+#recipe_body{
+	padding-top : 30px;
+	padding-bottom : 70px;
+	width: 1200px;
+	margin: 40px auto;
+	border-bottom : 3px solid #ebebeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#smarteditor {
+	width: 100%;
+}
+
+#form-btns {
+	width: 95%;
+	margin: 10px;
+	text-align: right;
+}

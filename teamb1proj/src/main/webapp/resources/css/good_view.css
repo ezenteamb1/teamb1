@@ -1,0 +1,286 @@
+@charset "UTF-8";
+
+
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf) format("truetype");
+}
+
+
+
+/* 맛집 상세보기 background */
+#good_back{
+	width : 1500px;
+	margin-left : auto;
+	margin-right : auto;
+	margin-top : 100px;
+}
+
+					/*--------------------------- 맛집 제목 ---------------------------*/
+					
+/* 맛집 상세보기 제목 */
+#ghead{
+	 margin : 0 auto;
+	 width : 900px;
+	 padding: 30px;
+	 border-bottom : 4px solid #ebebeb;
+	 margin-bottom : 60px;
+	 background: #fff3b3;
+	 border-radius: 20px 20px 0px 0px;
+}
+
+/* 맛집 이미지 div */
+#good_imgDiv{
+	overflow : hidden;
+	background-color:transparent;
+	width : 90px;
+	height : 90px;
+	border-radius: 10px;
+}
+
+/* 맛집 사진 */
+.good_img{
+	object-fit : cover;
+	width : 100%;
+	height : 100%;
+}
+
+/* 맛집 이름 */
+.good_title{
+	font-family: 'NanumSquareNeoBold';
+	text-align: left;
+	font-size : 30px;
+}
+
+/* 맛집 별점 */
+.good_title span{
+	font-family: 'NanumSquareNeo';
+	color : #ff7400;
+}
+
+/* 맛집 설명 */
+.good_secondTitle{
+	font-family: 'NanumSquareNeo';
+	margin-top : 10px;
+	margin-bottom : 10px;
+	
+}
+
+/* 지역태그 */
+#ghead a{
+	color :black;
+	font-family: 'NanumSquareNeoBold';
+}
+
+					/*--------------------------- 맛집 본문 ---------------------------*/
+
+/* 맛집 상세보기 본문 */
+#gbody{
+	margin : 0 auto;
+	width : 900px;
+	
+}
+
+/* 매장소개,매장소개글 div */
+#good_ExDiv{
+	width : 880px;
+	border: 2px solid #ebebeb;
+	border-radius: 13px;
+	padding: 20px;
+	margin-bottom : 12px;
+}
+
+/* "매장소개" */
+#good_ExTitle{
+	font-family: 'NanumSquareNeoBold';
+	font-size : 20px;
+	margin-bottom : 20px;
+}
+
+/* 매장소개글 */
+.good_Ex{
+	font-family: 'NanumSquareNeo';
+	font-size : 16px;
+	line-height: 1.6;
+}
+
+/* 영업시간, 주차, 메뉴... div */
+#good_data{
+	width : 480px;
+	border: 2px solid #ebebeb;
+	border-radius: 13px;
+	padding : 20px;
+	display: inline-flex;
+}
+
+/* 영업시간, 주차, 메뉴... table th */
+.good_dataTable th{
+	text-align: left;
+	font-family: 'NanumSquareNeoBold';
+	padding-right : 30px;
+	padding-bottom : 15px;
+	padding-top : 15px;
+	font-size: 17px;
+	
+}
+
+/* 영업시간, 주차, 메뉴... table td */
+.good_dataTable td{
+	padding-top : 15px;
+	padding-bottom : 15px;
+	font-family: 'NanumSquareNeo';
+	font-size: 16px;
+	
+}
+
+/* 지도 */
+.map_div{
+	display: inline-flex;
+	border: 2px solid #ebebeb;
+	border-radius: 13px;
+	margin-left: 10px;
+    width: 388px;
+    height: 392px;
+    position: absolute;
+}
+
+#map {
+	width: 250px;
+	height: 250px;
+	margin-top: 10px;
+	display: none;
+}
+
+					/*--------------------------- 맛집 리뷰 ---------------------------*/
+
+/* 맛집 리뷰 div */				
+.good_replyBack{
+	border: 2px solid #ebebeb;
+	border-radius: 13px;
+	width : 882px;
+	padding: 20px;
+	margin-top : 20px;
+}
+
+/* 리뷰작성 버튼 */
+.reply_write{
+	text-decoration: none;
+	color : #ff7400;
+	font-family: 'NanumSquareNeoBold';
+	background: white;
+	border: 0px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.reply_write:hover{
+	color : #a44d10;
+}
+
+/* 리뷰li */
+.good_replyLi{
+	list-style: none;
+	width : 400px;
+	border-bottom : 2px solid #ebebeb;
+	padding : 15px;
+}
+
+.good_replyLi:nth-of-type(odd){
+	border-right : 2px solid #ebebeb;
+}
+
+
+/* 리뷰 유저 이름*/
+.reply_User{
+	display : inline-block;
+	font-family: 'NanumSquareNeoBold';
+	margin-bottom : 13px;
+}
+
+/* 리뷰 별점*/
+.reply_User span{
+	padding-left : 10px;
+	font-family: 'NanumSquareNeoBold';
+	color : #ff7400;
+}
+
+/* 리뷰 신고,삭제 */
+.reply_del{
+	display : inline-block;	
+}
+
+.reply_del a{
+	font-family: 'NanumSquareNeo';
+	color : #b0b0b0;
+	font-size: 12px;
+}
+
+/* 리뷰 */
+.good_reply{
+	font-family: 'NanumSquareNeo';
+	font-size: 15px;
+	line-height : 1.6;
+	word-break:break-all;
+}
+
+/* 리뷰작성 모달창 */
+.reply_modal{
+	position: fixed;
+	display:none;        
+	justify-content: center;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.reply_modal_body{
+	position:absolute;
+	top:50%;
+	width:400px;
+	height: 200px;
+	padding:40px;  
+	text-align: center;
+	background-color: rgb(255,255,255);
+	border-radius:10px;
+	box-shadow:0 2px 3px 0 rgba(34,36,38,0.15);
+	transform:translateY(-50%); 
+	display: none;
+}
+
+.reply_sub_btn{
+	font-family: 'NanumSquareNeo';
+	color : #ff7400;
+	background : white;
+	border:0px;
+	position: relative;
+    top: 20px;
+    right: -70px;
+}
+.reply_sub_btn:hover{
+	cursor: pointer;
+	color : #a44d10;
+}
+
+.reply_modal_close{
+	font-family: 'NanumSquareNeoBold';
+	color : #ff7400;
+	background : white;
+	border:0px;
+	position: relative;
+    right: 61px;
+    top: 3px;
+    font-size: 14px;
+}
+
+.reply_modal_close:hover{
+	cursor: pointer;
+	color : #a44d10;
+}

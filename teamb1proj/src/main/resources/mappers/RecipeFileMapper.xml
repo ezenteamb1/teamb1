@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="RecipeFileMapper">
+	<resultMap type="VO.RecipeFileVO" id="fileMap">
+		<id property="recipeFileNo" column="recipe_file_no"/>
+		<result property="recipeNo" column="recipe_no" />
+		<result property="recipeFilePath" column="recipe_file_path" />
+		<result property="recipeFileName" column="recipe_file_name" />
+		<result property="recipeFileSize" column="recipe_file_size" />
+		<result property="recipeFileType" column="recipe_file_type" />
+	</resultMap>
+
+	<insert id="insert" parameterType="java.util.List">
+		insert into recipe_file(recipe_no, recipe_file_path, recipe_file_name, recipe_file_size, recipe_file_type)
+		values(#{recipeNo}, #{recipeFilePath}, #{recipeFileName}, #{recipeFileSize}, #{recipeFileType})
+	</insert> 
+	
+	<select id="findByRecipeNo" parameterType="int" resultType="VO.RecipeFileVO">
+		select * from recipe_file where recipe_no = #{recipeNo};
+	</select>
+	
+	<update id="update" parameterType="VO.RecipeFileVO">
+		update recipe_file set recipe_file_path = #{recipeFilePath}, recipe_file_name = #{recipeFileName},
+		recipe_file_size = #{recipeFileSize}, recipe_file_type = #{recipeFileType} where recipe_no = #{recipeNo}
+	</update>
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="CodeMapper">
+	<resultMap type="VO.CodeVO" id="CodeMap">
+		<id column="code_no" property="codeNo" />
+		<result column="big_code" property="bigCode" />
+		<result column="small_code" property="smallCode" />
+	</resultMap>
+	
+	
+	<select id="findByBigAndSmall" parameterType="VO.CodeVO" resultMap="CodeMap">
+		select code_no, big_code, small_code from code 
+		where big_code = #{bigCode} and small_code = #{smallCode};
+	</select>
+	
+	<insert id="insert" parameterType="VO.CodeVO" useGeneratedKeys="true" keyProperty="code_no">
+		insert into code(big_code, small_code) 
+		values(#{bigCode}, #{smallCode}); 
+	</insert>
+</mapper>

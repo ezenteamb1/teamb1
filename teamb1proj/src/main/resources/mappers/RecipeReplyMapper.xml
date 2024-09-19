@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="RecipeReplyMapper">
+
+	<resultMap type="VO.RecipeReplyVO" id="recipereplyMap">
+		<id property="recipeReplyNo" column="recipe_reply_no"/>
+		<result property="recipeNo"  column="recipe_no"/>
+		<result property="id" column="id"/>
+		<result property="recipeReplyContent" column="recipe_reply_content"/>
+		<result property="createDate" column="create_date"/>
+	</resultMap>
+	
+	<insert id="insert" parameterType="VO.RecipeReplyVO" useGeneratedKeys="true" keyProperty="recipeReplyNo" >
+		insert into recipe_reply(id,recipe_no, recipe_reply_content)
+		values(#{id},#{recipeNo}, #{recipeReplyContent} );
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		delete from recipe_reply where recipe_reply_no =#{recipeReplyNo};
+	</delete>
+	
+	<update id="update" parameterType="VO.RecipeReplyVO">
+		update recipe_reply set recipe_reply_content=#{recipeReplyContent} where recipe_reply_no =#{recipeReplyNo};
+	</update>
+	
+</mapper>

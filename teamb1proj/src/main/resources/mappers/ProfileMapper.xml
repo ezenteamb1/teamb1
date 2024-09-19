@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ProfileMapper">
+		<resultMap type="VO.ProfileVO" id="profileMap">
+		<id column="profile_no" property="profileNo" />
+		<result column="profile_path" property="profilePath" />
+		<result column="profile_name" property="profileName" />		
+	</resultMap>
+	
+	<insert id="insert" parameterType="VO.ProfileVO">
+		insert into profile(profile_no, profile_path, profile_name) 
+		values (#{profileNo}, #{profilePath},  #{profileName});
+	</insert>
+</mapper>

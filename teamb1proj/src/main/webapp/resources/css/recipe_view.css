@@ -1,0 +1,216 @@
+@charset "UTF-8";
+
+
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf) format("truetype");
+}
+
+
+/* 레시피 페이지 */
+#recipe_div{
+	text-align: center;
+	border-bottom: 3px solid #ebebeb;
+	width: 1100px;
+	height: 500px;
+	margin-left: auto;
+	margin-right : auto;
+}
+
+#recipe_nameStuff{
+	display: inline-block;
+	float : right;
+	width: 590px;
+	margin-top: 50px;
+	margin-right: 90px;
+	width: 450px;
+}
+
+
+/* 레시피 이미지 */
+#recipe_img{
+	width: 333px;
+    margin-left: 90px;
+    margin-top: 88px;
+}
+
+/* 레시피 제목, 설명 */
+#recipe_title{
+	font-family: 'NanumSquareNeo';
+	text-align: left;
+	word-break: break-all;
+	
+}
+
+/* 레시피 이름 */
+.recipe_name{
+	padding-top: 30px;
+    margin-top: 10px;
+	font-family: 'NanumSquareNeoBold';
+	font-size : 35px;
+	border-top: 3px solid #ebebeb;
+	margin-bottom: 15px;
+}
+
+/* 작성자 */
+#writer {
+	width: 1100px;
+	margin: 30px auto 0px;
+	padding-bottom: 20px;
+	border-bottom: 2px solid #ebebeb;
+	font-size: 18px;
+	font-family: "NanumSquareNeo";
+}
+
+#writer span {
+	font-family: "NanumSquareNeoBold";
+	font-size: 22px;
+	font-weight: 700;
+}
+
+
+/* 레시피 재료 div */
+#recipe_stuff{
+	margin-top : 35px;
+	text-align: left;
+	font-family: 'NanumSquareNeo';
+}
+
+#recipe_stuff p{
+	margin : 0px;
+	font-size: 13px;
+	color : #888888;
+}
+
+/* "재료" */
+#stuff{
+	font-family: 'NanumSquareNeoBold';
+	font-size : 25px;
+	margin-bottom: 25px;
+}
+
+/* "필수재료", "선택재료", "양념장" */
+#second_stuff{
+	font-family : 'NanumSquareNeoBold';
+	margin-top: 30px;
+    margin-bottom: 9px;
+	font-size: 17px;
+}
+
+
+/* 레시피 div */
+#recipe_body{
+	padding-top : 100px;
+	padding-bottom : 100px;
+	text-align: center;
+	width: 1200px;
+	margin-left: auto;
+	margin-right : auto;
+	margin-bottom : 50px;
+	border-bottom : 3px solid #ebebeb;
+	
+}
+
+
+/* 레시피 숫자 */
+#recipe_number{
+	display : inline-block;
+	color : #fd7405;
+	font-family: 'NanumSquareNeo';
+	font-size : 30px;
+	padding-right : 10px;
+}
+
+/* 레시피 설명 */
+#recipe_comment{
+	display : inline-block;
+	font-family: 'NanumSquareNeo';
+}
+
+
+
+						/*------------------------------- 댓글 -------------------------------*/
+/* 댓글 div */						
+.reply_body{
+	text-align: center;
+	width: 1200px;
+	margin-left: auto;
+	margin-right : auto;
+	margin-bottom : 50px;
+	background: #ededed;
+	padding-top : 100px;
+	padding-bottom : 100px;
+	border-radius: 10px;
+	min-height: 30vh;
+}
+						
+						
+/* 댓글 작성란 */			
+.recipe_reply{
+	border-radius: 5px;
+	border : 2px solid #7300e6;
+	box-shadow: 0px 0px 3px 0px #7300e6;;
+	width : 600px;
+	height : 40px;
+	position: relative;
+	font-family: 'NanumSquareNeo';
+	font-size : 20px;
+}
+
+/* 댓글 작성 버튼 */
+.reply_button{
+	background : #7300e6;
+	color : white;
+	position: relative;
+	height : 45px;
+	width : 95px;
+	border-radius: 5px;
+	border : 0px;
+	right: 102px;
+	top : 1px;
+	font-family: 'NanumSquareNeo';
+	font-size : 20px;
+}
+
+.reply_button:hover{
+	background: #610ebc;
+}
+
+.reply_button:active{
+	background: #3d146d;
+}
+
+
+/* 댓글 background */
+.reply_back{
+	background : white;
+	box-shadow: inset 0px 0px 7px 0px;
+	width: 700px;
+    border-radius: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top : 20px;
+	text-align: left;
+	padding: 15px;
+}
+
+/* 댓글 유저 이름 */
+.user_name{
+	display:inline-block;
+	font-family: 'NanumSquareNeoBold';
+	font-size : 20px;
+	margin-top: 15px;
+	position: absolute;
+}
+
+/* 댓글 내용 */
+.comment{
+	font-family: 'NanumSquareNeo';
+}

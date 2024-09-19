@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AskMapper">
+	<resultMap type="VO.AskVO" id="askMap">
+		<id property="askNo" column="ask_no" />
+		<result property="id" column="id" />
+		<result property="askCate" column="ask_cate" />
+		<result property="askTitle" column="ask_title" />
+		<result property="askContent" column="ask_content" />
+		<result property="createDate" column="create_date" />
+		<result property="askReply" column="ask_reply"/>
+		<result property="askState" column="ask_state" />
+		<result property="askReplyDate" column="ask_reply_date"/>
+	</resultMap>
+	
+	<insert id="insert" parameterType="VO.AskVO" useGeneratedKeys="true" keyProperty="askNo">
+		insert into ask(id, ask_cate, ask_title, ask_content)
+		values(#{id}, #{askCate}, #{askTitle}, #{askContent});
+	</insert>
+	
+	<select id="getAll" resultMap="askMap">
+		select * from ask where id = #{id};
+	</select>
+	
+	<select id="findByAskNo" parameterType="int" resultMap="askMap">
+		select * from ask where ask_no = #{askNo};
+	</select>
+	
+	<select id="count" resultType="int">
+		select count(*) from ask where id = #{id};
+	</select>
+	
+	<update id="reply" parameterType="VO.AskVO">
+		update ask set ask_reply = #{askReply}, ask_reply_date = now(), ask_state = 1 where ask_no = #{askNo};
+	</update>
+	
+</mapper>

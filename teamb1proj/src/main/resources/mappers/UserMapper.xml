@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+	<resultMap type="VO.UserVO" id="userMap">
+			<id property="id" column="id"/>
+			<result property="pw" column="pw"/>
+			<result property="name" column="name"/>
+			<result property="nick" column="nick"/>
+			<result property="email" column="email"/>
+			<result property="pn" column="pn"/>
+			<result property="userType" column="user_type"/>
+			
+			<collection property="profilevo" ofType="VO.ProfileVO">
+				<id property="profileNo" column="profile_no" />
+				<result property="profilePath" column="profile_path" />
+				<result property="profileName" column="profile_name" />
+				<result property="id" column="id"/>
+			</collection>
+			
+	</resultMap>
+
+	<insert id="insert" parameterType="VO.UserVO">
+		insert into user(id, pw, name, nick, email, pn, user_type)
+		values(#{id}, #{pw}, #{name}, #{nick}, #{email}, #{pn}, 0);
+	</insert>
+	
+	
+	<select id="login" parameterType="VO.UserVO" resultMap="userMap">
+		select user.id, user.user_type, profile.profile_path, profile.profile_name 
+		from user left join profile on user.id = profile.id 
+		where user.id = #{id} and user.pw = #{pw}; 
+	</select>
+	
+	<select id="getProfileById" resultMap="userMap">
+		select * from user left join profile on user.id = profile.id where user.id = #{id};
+	</select>
+	
+	
+	<!-- input에 입력된 아이디가 파라미터로 넘어온다.  -->
+	<select id="idCheck" parameterType="String" resultType="Integer">
+		select count(*) from user where id = #{id};
+	</select>
+	
+	<select id="usermodify" parameterType="VO.UserVO" resultMap="userMap">
+		select user.name, user.pw, user.pn, user.email, user.nick, profile.profile_name
+		from user left join profile on user.id = profile.id
+		where user.id = #{id}; 
+	</select>
+</mapper>

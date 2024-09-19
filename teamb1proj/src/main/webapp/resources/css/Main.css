@@ -1,0 +1,630 @@
+@charset "UTF-8";
+
+/* 글자 폰트 */
+@font-face {
+    font-family: 'MangoDdobak-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* 작은 아이콘 폰트 */
+@font-face {
+    font-family: 'Ownglyph_meetme-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 메뉴아이콘 애니메이션 */
+
+/* 맛집 아이콘 */
+@keyframes scale-up-center1 {
+  0% {
+            transform: scale(1);
+            box-shadow: 0px 0px 0px 0px rgb(255 0 210);
+            transform-origin: 50% 100%;
+  }
+  100% {
+            transform: scale(1.3);
+            box-shadow: 0px 0px 15px 0px rgb(255 0 210);
+            transform-origin: 50% 100%; 
+  }
+}
+
+
+
+/* 레시피 아이콘 */
+@keyframes scale-up-center2 {
+  0% {
+            transform: scale(1);
+            box-shadow: 0px 0px 0px 0px rgb(255 0 210);
+            transform-origin: 50% 100%;
+  }
+  100% {
+            transform: scale(1.3);
+            box-shadow: 0px 0px 15px 0px rgb(251 130 1);
+            transform-origin: 50% 100%; 
+  }
+}
+
+
+/* 룰렛 아이콘 */
+@keyframes scale-up-center3 {
+  0% {
+            transform: scale(1);
+            box-shadow: 0px 0px 0px 0px rgb(255 0 210);
+            transform-origin: 50% 100%;
+  }
+  100% {
+            transform: scale(1.3);
+            box-shadow : 0px 0px 15px 0px rgb(77 163 1);
+            transform-origin: 50% 100%; 
+  }
+}
+
+
+/* 문의사항 아이콘 */
+@keyframes scale-up-center4 {
+  0% {
+            transform: scale(1);
+            box-shadow: 0px 0px 0px 0px rgb(255 0 210);
+            transform-origin: 50% 100%;
+  }
+  100% {
+            transform: scale(1.3);
+            box-shadow: 0px 0px 15px 0px rgb(187 0 245);
+            transform-origin: 50% 100%; 
+  }
+}
+
+
+/* 이용가이드 아이콘 */
+@keyframes scale-up-center5 {
+  0% {
+            transform: scale(1);
+            box-shadow: 0px 0px 0px 0px rgb(255 0 210);
+            transform-origin: 50% 100%;
+  }
+  100% {
+            transform: scale(1.3);
+            box-shadow: 0px 0px 15px 0px rgb(0 17 255);
+            transform-origin: 50% 100%; 
+  }
+}	
+	
+@keyframes jello-horizontal {
+  0% {
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+	
+	
+/* 맛집 음식 이미지 애니메이션 */
+@keyframes scale-up {
+  0% {
+            transform: scale(1);
+
+  }
+  100% {
+            transform: scale(1.1);
+  }
+}
+
+/* pick 글꼴 */
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* 리본 */
+.ribbon {
+  position: absolute;
+  right: -5px; top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 90px; 
+  height: 90px;
+  text-align: right;
+}
+.ribbon span {
+  font-family: 'PyeongChangPeace-Bold';
+  font-size: 13px;
+  font-weight: bold;
+  color: #d6b534;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(45deg);
+  width: 125px;
+  display: block;
+  background: black;
+  box-shadow: 0px 0px 5px 2px rgb(214 181 54);
+  position: absolute;
+  top: 29px;
+  right: -25px;
+}
+
+
+/* 왕관 이미지 */
+.crown{
+	width: 100px;
+    display: block;
+    position: relative;
+    z-index: 3;
+    top: 40px;
+    left: -35px;
+    transform: rotate(330deg);
+}
+
+
+ /* a태그 밑줄제거 */
+
+	a{
+		text-decoration: none;
+	}
+
+	
+
+	/* 메뉴 아이콘 */
+	#div{
+		margin-top : 30px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom : 90px;
+		text-align: center;
+		padding-right: 90px;
+	}
+	
+	
+	
+	/* 맛집 아이콘 */
+	.box1{
+		margin-top : 70px;
+		margin-left : 40px;
+		margin-right: 40px;
+    	margin-bottom: 10px;
+		width : 100px;
+		height : 100px;
+		display : inline-block;
+		border-radius: 20px;
+		overflow : hidden;
+	}
+	
+	.box1:hover{
+		animation: scale-up-center1 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	}
+	
+	
+	
+	/* 레시피 아이콘 */
+	.box2{
+		margin-top : 70px;
+		margin-left : 40px;
+		margin-right: 40px;
+    	margin-bottom: 10px;
+		width : 100px;
+		height : 100px;
+		display : inline-block;
+		border-radius: 20px;
+		overflow : hidden;
+	}
+	
+	.box2:hover{
+		animation: scale-up-center2 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	}
+	
+	
+	/* 룰렛 아이콘 */
+	.box3{
+		margin-top : 70px;
+		margin-left : 40px;
+		margin-right: 40px;
+    	margin-bottom: 10px;
+		width : 100px;
+		height : 100px;
+		display : inline-block;
+		border-radius: 20px;
+		overflow : hidden;
+	}
+	
+	.box3:hover{
+		animation: scale-up-center3 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	}
+	
+	
+	/* 문의사항 아이콘 */
+	.box4{
+		margin-top : 70px;
+		margin-left : 40px;
+		margin-right: 40px;
+    	margin-bottom: 10px;
+		width : 100px;
+		height : 100px;
+		display : inline-block;
+		border-radius: 20px;
+		overflow : hidden;
+	}
+	
+	.box4:hover{
+		animation: scale-up-center4 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	}
+	
+	
+	/* 이용가이드 아이콘 */
+	.box5{
+		margin-top : 70px;
+		margin-left : 40px;
+		margin-right: 40px;
+    	margin-bottom: 10px;
+		width : 100px;
+		height : 100px;
+		display : inline-block;
+		border-radius: 20px;
+		overflow : hidden;
+	}
+	
+	.box5:hover{
+		animation: scale-up-center5 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	}
+	
+	
+	
+	
+	#icon_div{
+		display: inline-block;
+		font-size : 20px;
+		overflow : hidden;
+	}
+	
+	/* 큰아이콘 이미지 */
+	#ImgDiv_img{
+		object-fit : cover;
+		width : 100%;
+		height : 100%;
+	}
+	
+	
+	/* 작은아이콘 이미지 */
+	#icon_img{
+		object-fit : cover;
+		width : 70%;
+		height : 70%;
+		margin-top: 13px;
+		margin-left: 2px;
+	}
+	
+	#icon_imgsp{
+		object-fit : cover;
+		width : 70%;
+		height : 70%;
+		margin-top: 13px;
+		margin-left: 2px;
+		margin-bottom: 30px;
+	}
+	
+	
+	
+	
+		
+	/* 이용가이드 아이콘 */
+	
+	.profile-top {
+    background-color: #dddff4;
+    height: 225px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+	}
+
+ 	.content-desc {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        padding: 10px 0 0 45px;
+    }
+	
+	
+	
+	
+	
+	
+	/* 큰 메뉴 아이콘 */ 
+	#Img{
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		padding-right: 90px;
+	}
+	
+	#ImgDiv{
+		width : 500px;
+		height : 300px;
+		margin-left: 25px;
+		margin-right: 25px;
+		display: inline-block;
+		border-radius: 10px;
+	}
+	
+	
+			/*--------------------------------------------------------  맛집  --------------------------------------------------------*/	
+	
+	
+	/* 맛집 리스트 배경 */
+	#good{
+		height : 650px;
+		background : white;
+		padding-top : 30px; 
+	}
+	
+	/* 맛집 리스트 제목 */
+	#good_list{
+		font-family: 'MangoDdobak-B';
+		font-size : 30px;
+		margin-left : 40px;
+		color : black;
+		display : inline;
+	}
+	
+	/* 맛집 바로가기 버튼 */
+	#good_page{
+		font-size : 20px;
+		font-family: 'MangoDdobak-B';
+		color : #616161;
+		position: relative;
+    	right: 180px;
+    	bottom: 5px;
+		display : inline;
+		float : right;
+		line-height: 40px;
+	}
+	
+	#good_page:hover{
+		animation: jello-horizontal 0.9s both;
+	}
+	
+	/* 맛집 리스트 div */
+	#good_div{
+		padding-top : 35px;
+		margin-top : 10px;
+		text-align: center;
+		padding-right: 90px;
+	}
+	
+	/* 맛집 음식,제목 Div */
+	#title_food{
+		display : inline-block;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	
+	/* 맛집 음식 이미지 div */
+	#good_div_img{
+		overflow : hidden;
+		margin-top : 20px;
+		margin-bottom : 20px;
+		background-color:transparent;
+		width : 200px;
+		height : 200px;
+		float : left;
+	}
+	
+	/* 맛집 음식 이미지 */
+	#food_img{
+		 object-fit : cover;
+		 width : 100%;
+		 height : 100%;
+	}
+	
+	#food_img:hover{
+		animation: scale-up 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	}
+	
+	/* 맛집 리스트 음식 이름 */
+	#goodfd_div{
+		font-size : 20px;
+		font-family: 'MangoDdobak-B';
+		margin-top : 20px;
+		float : left;
+		background: #f0f0f0;
+		width : 200px;
+		height : 200px;
+	}
+	
+	/* 별점 */
+	#star{
+		margin-top : 15px;
+		color : #ffc31f;
+		font-size: 40px;
+	}
+	/* 맛집 이름 */
+	#good_title{
+		margin-top : 30px;
+		font-size : 20px;
+		word-break:break-all;
+		color : black;
+	}
+	
+	
+	
+				/*--------------------------------------------------------  레시피  --------------------------------------------------------*/		
+	
+	
+	/* 레시피 리스트 배경 */
+	#recipe{
+		margin-top : 50px;
+	}
+	
+	/* 레시피 리스트 제목 */
+	#recipe_title{
+		font-family: 'MangoDdobak-B';
+		font-size : 30px;
+		margin-left : 40px;
+		display : inline;
+	}
+	
+	/* 레시피 바로가기 버튼 */
+	#recipe_page{
+		font-size : 20px;
+		font-family: 'MangoDdobak-B';
+		color : #616161;
+		position: relative;
+    	right: 180px;
+    	bottom: 30px;
+		display : inline;
+		float : right;
+		line-height: 40px;
+	}
+	#recipe_page:hover{
+		animation: jello-horizontal 0.9s both;
+	}
+	
+	/* 레시피 리스트 div */
+	#recipe_div{
+		margin-top : 10px;
+		text-align: center;
+		padding-right: 120px;
+	}
+	
+	/* 레시피 음식 이미지 div */
+	#recipe_div_img{
+		overflow : hidden;
+		display : inline-block;
+		margin-top : 50px;
+		margin-left : 10px;
+		margin-right: 10px;
+		background-color:transparent;
+		width : 230px;
+		height : 230px;
+	}
+	
+	/* 레시피 이미지 */
+	#recipe_img{
+		object-fit : cover;
+		width : 100%;
+		height : 100%;
+	}
+	
+	#recipe_img:hover{
+		animation: scale-up 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	}
+	
+	/* 레시피 제목 */
+	#recipe_name{
+		font-size : 20px;
+		font-family: 'MangoDdobak-B';
+		margin-top : 20px;
+		color : black;
+		text-decoration: none;
+	}
+	
+	
+	
+
+				/*--------------------------------------------------------  카테고리  --------------------------------------------------------*/
+
+
+	/* 카테고리 제목*/
+	#categori_title{
+		display : block;	
+		font-family: 'MangoDdobak-B';
+		font-size : 30px;
+		margin-left : 40px;
+		padding-bottom : 20px;
+		width : 400px;
+		border-bottom : 4px solid #ebebeb;
+	}
+	
+	
+	/* 카테고리 제목,이름,사진 div */
+	.category_div{
+		display : inline-block;
+		text-align: left;
+	}
+	
+	.category_div:nth-of-type(odd){
+		border-right : 4px solid #ebebeb;
+	}
+	
+	/* 카테고리 a태그 */
+	.category_a{
+		display: inline-block;
+		margin-left: 50px;
+		text-decoration: none;
+		color : black;
+		text-align: center;
+	}
+	
+	/* 맛집 카테고리 이름 */
+	.category_title{
+		display : block;
+		text-decoration: none;
+		font-size : 20px;
+   		color : black;
+   		font-family: 'MangoDdobak-B';
+   		text-decoration: none;
+   		text-align: center;
+	}
+	
+	/* 카테고리 이미지 div */
+	#categori_ImgDiv{
+		overflow : hidden;
+		display : inline-block;
+		background-color:transparent;
+		width : 230px;
+		height : 230px;
+		border-radius: 20px;
+		position: relative;
+		margin-bottom : 20px;
+		transition-duration: 0.5s;
+	}
+	#categori_ImgDiv:hover{
+		box-shadow: 0px 0px 20px 10px rgb(214 181 54);
+	}
+	/* 카테고리 이미지 */
+	#categori_img{
+		object-fit : cover;
+		width : 100%;
+		height : 100%;
+	}
+	
+	#categori_img:hover{
+		animation: scale-up 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	}
+
+
+			/*--------------------------------------------------------  footer  --------------------------------------------------------*/
+	
+	#footer{
+	
+		width:100vw;
+		height:150px;
+		margin-left: calc(-50vw + 50%);
+		margin-bottom: calc(-50vw + 50%);
+		background:#d1d1d1;
+		text-align: center;
+		
+		}
+	

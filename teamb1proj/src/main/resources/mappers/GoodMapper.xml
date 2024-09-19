@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="GoodMapper">
+
+    <!--
+    resultMap은 자바 클래스와 데이터베이스 테이블의 필드(컬럼)을 1:1로 매핑해주는 역할을 수행한다.
+    type속성에 매핑될 자바클래스를 입력하고, id속성에 고유 이름을 입력한다.
+    -->
+    <resultMap type="VO.GoodVO" id="goodMap">
+        <!--
+        id태그는 테이블의 pk에 해당한다.
+        property속성은 resultMap의 type속성에 입력된 클래스가 가지고 있는 필드이다.
+        column 속성은 테이블이 가지고 있는 필드(컬럼)이름이다.
+        테이블에 sno라는 pk필드를 BoardVO클래스의 sno필드에 넣어준다는 것.
+        -->
+        <id property="goodNo" column="good_no"/>
+        <result property="id" column="id"/>
+        <result property="codeNo" column="code_no"/>
+        <result property="goodTitle" column="good_title"/>
+        <result property="goodContent" column="good_content"/>
+        <result property="createDate" column="create_date"/>
+        <result property="goodAddr" column="good_addr"/>
+        <result property="goodView" column="good_view"/>
+        <result property="goodSummary" column="good_summary"/>
+        <result property="star" column="star"/>
+        <result property="parking" column="parking"/>
+        <result property="goodPn" column="good_pn"/>
+        <result property="open" column="open"/>
+        <result property="close" column="close"/>
+        <result property="menu1" column="menu1"/>
+        <result property="menu2" column="menu2"/>
+        <result property="menu3" column="menu3"/>
+        <result property="price1" column="price1"/>
+        <result property="price2" column="price2"/>
+        <result property="price3" column="price3"/>
+        <result property="deleteFlag" column="delete_flag"/>
+
+        <!--
+        board가 파일을 품을 수 있도록 여기에 넣어줘야 한다.
+        collection태그는 BoardVO 클래스가 가지고 있는 필드 중에
+        List<?> 타입으로 선언한 필드를 테이블의 필드와 1:1로 매핑한다.
+        BoardVO 클래스에 존재하는 필드 중에 files 필드가 ofType속성에 입력된 클래스 타입의
+        list라는 것을 의미한다.
+        List<FileVO> files
+        -->
+        <collection property="goodfilevo" ofType="VO.GoodFileVO">
+            <!--
+            property속성은 ofType속성에 입력된 클래스의 필드를 의미한다.
+            FileVO클래스의 fileNo필드라는 의미.
+            테이블의 file_no 필드의 값을 FileVO클래스의 fileNo필드에 넣어준다.
+            -->
+            <id property="goodFileNo" column="good_file_no"/>
+            <result property="goodNo" column="good_no"/>
+            <result property="goodFilePath" column="good_file_path"/>
+            <result property="goodFileName" column="good_file_name"/>    
+            <result property="goodFileSize" column="good_file_size"/>
+            <result property="goodFileType" column="good_file_type"/>                            
+        </collection>
+        
+        <collection property="codevo" ofType="VO.CodeVO">
+        	<id property="codeNo" column="code_no"></id>
+        	<result property="bigCode" column="big_code"/>
+        	<result property="smallCode" column="small_code"/>
+        </collection>
+
+	<collection property="replys" ofType="java.util.Map">
+		<result property="goodReplyNo" column="good_Reply_No" />
+		<result property="goodNo" column="good_No" />
+		<result property="id" column="id" />
+		<result property="profileNo" column="profile_No" />
+		<result property="goodReplyContent" column="good_reply_content" />
+		<result property="createDate" column="create_Date" />
+	</collection>
+        
+
+    </resultMap>
+
+    <!-- 
+    resultMap은 아래 SQL 쿼리를 실행하고 반환 될 자바클래스 타입을 정의한다.
+    -->
+   
+
+    <!--
+    실제 SQL 쿼리가 실행될 타입에 따라 다른 XML 태그를 사용한다.
+    insert쿼리의 경우 <insert>태그를 사용하고
+    select쿼리의 경우 <select>태그를 사용한다.
+    id속성은 XML의 고유값이어야 한다. (중복 되면 안됨)
+    parameterType 속성은 쿼리를 실행하기 위해 repository에서 넘겨준 파라미터 타입을 넣어준다.
+    parameterType에 들어갈 수 있는 값은 클래스나 자바 기본타입만 들어갈 수 있다.
+    useGeneratedKeys 속성이 true라면 아래 쿼리를 실행할 때, 테이블의 pk가 auto_increment제약조건이 있어야만 하고
+    조건이 충족된다면 증가된 pk의 값을 파라미터로 받은 BoardVO클래스의 sno필드의 값으로 넣어준다.
+    sno필드인 이유는 keyProperty 속성에 작성된 필드로 넣어주기 때문
+    XML 태그 안에서는 parameterType으로 넘어온 클래스의 필드에 el문법#{}으로 접근이 가능하다.
+    #{클래스필드}는 클래스필드의 타입에 따라서 문자열이면 홑따옴표(')가 붙고,
+    정수형이라면 붙지 않는다.
+    ${클래스필드}는 홑따옴표가 붙지 않는다.
+    -->
+    <insert id="insert" parameterType="VO.GoodVO" useGeneratedKeys="true" keyProperty="goodNo">
+        insert into good(id, code_no, good_title, good_content, create_date, good_addr, good_summary, 
+        star, parking, good_pn, open, close, menu1, menu2, menu3, price1, price2, price3, delete_flag)
+        values(#{id}, #{codeNo}, #{goodTitle}, #{goodContent}, now(), #{goodAddr}, #{goodSummary}, #{star}, #{parking}, #{goodPn}, #{open}, #{close}, 
+        		#{menu1}, #{menu2}, #{menu3}, #{price1}, #{price2}, #{price3}, 0); 
+    </insert>
+
+	<select id="findById" parameterType="int" resultMap="goodMap">
+		select * from good left join good_file on good.good_no = good_file.good_no 
+		where good.good_no = #{goodNo};
+	</select>
+
+
+    <update id="update" parameterType="VO.GoodVO">
+        update good set code_no = #{codeNo}, good_title = #{goodTitle}, good_content = #{goodContent}, good_addr = #{goodAddr}, 
+        good_summary = #{goodSummary}, star = #{star}, parking = #{parking}, good_pn = #{goodPn}, open = #{open}, close = #{close},
+        menu1 = #{menu1}, menu2 = #{menu2}, menu3 = #{menu3}, price1 = #{price1}, price2 = #{price2}, price3 = #{price3}
+        where good_no = #{goodNo};
+    </update>
+
+	<update id="view_delete" parameterType="VO.GoodReplyVO"> 
+		update good set delete_flag = 1 where good_No = #{goodNo}; 
+	</update>
+
+	<select id="find_goodData" resultMap="goodMap"> 
+	SELECT * FROM good_reply
+		LEFT JOIN good ON good_reply.good_no = good.good_no LEFT JOIN
+		good_file ON good.good_no = good_file.good_no where good_reply.good_No
+		= #{good_no}; 
+	</select>
+</mapper>

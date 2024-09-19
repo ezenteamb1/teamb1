@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="RecipeMapper">
+ 	<resultMap type="VO.RecipeVO" id="recipeMap">
+		<id property="recipeNo" column="recipe_no" />
+		<result property="id" column="id" />
+		<result property="codeNo" column="code_no" />
+		<result property="recipeTitle" column="recipe_title"/>
+		<result property="createDate" column="create_date" />
+		<result property="mustIngre" column="must_ingre" />
+		<result property="choiceIngre" column="choice_ingre"/>
+		<result property="jang" column="jang" />
+		<result property="smart" column="smart"/>
+		<result property="recipeView" column="recipe_view" />
+		<result property="deleteFlag" column="delete_flag" />
+		
+		<collection property="recipeFile" ofType="VO.RecipeFileVO">
+			<id property="recipeFileNo" column="recipe_file_no" />
+			<result property="recipeNo" column="recipe_no" />
+			<result property="recipeFilePath" column="recipe_file_path" />
+			<result property="recipeFileName" column="recipe_file_name" />
+			<result property="recipeFileSize" column="recipe_file_size" />
+			<result property="recipeFileType" column="recipe_file_type" />
+		</collection>
+		
+		<collection property="codevo" ofType="VO.CodeVO">
+			<id property="codeNo" column="code_no" />
+			<result property="bigCode" column="big_code" />
+			<result property="smallCode" column="small_code" />
+		</collection>
+		<collection property="recipereplyvo" ofType="VO.RecipeReplyVO">
+			<id property="recipeReplyNo" column="recipe_reply_no"/>
+			<result property="recipeNo" column="recipe_no"/>
+			<result property="id" column="id"/>
+			<result property="profileNo" column="profile_no"/>
+			<result property="recipeReplyContent" column="recipe_reply_content"/>
+			<result property="createDate" column="create-date"/>
+		</collection>
+	</resultMap>
+	
+	<insert id="insert" parameterType="VO.RecipeVO" useGeneratedKeys="true" keyProperty="recipeNo">
+		insert into recipe(id, code_no, recipe_title, must_ingre, choice_ingre, jang, smart)
+		values(#{id}, #{codeNo}, #{recipeTitle}, #{mustIngre}, #{choiceIngre}, #{jang}, #{smart});
+	</insert>
+	
+	<select id="findByRecipeNo" parameterType="int" resultMap="recipeMap">
+		select * from recipe 
+		left join recipe_file on recipe.recipe_no = recipe_file.recipe_no 
+		left join recipe_reply on recipe.recipe_no = recipe_reply.recipe_no
+		where recipe.recipe_no = #{recipeNo} and delete_flag = 0;
+	</select>
+	
+	<select id="getAllData" resultMap="recipeMap">
+		select * from recipe left join recipe_file on recipe.recipe_no = recipe_file.recipe_no where recipe.delete_flag = 0;
+	</select>
+	
+	<update id="update" parameterType="VO.RecipeVO">
+		update recipe set code_no = #{codeNo}, recipe_title = #{recipeTitle}, must_ingre = #{mustIngre}, choice_ingre = #{choiceIngre}, 
+		jang = #{jang}, smart = #{smart} where recipe_no = ${recipeNo} and delete_flag = 0;  
+	</update>
+	
+	<update id="deleteFlag" parameterType="VO.RecipeVO">
+		update recipe set delete_flag = 1 where recipe_no = #{recipeNo} and delete_flag = 0;	
+	</update> 
+	
+</mapper>
